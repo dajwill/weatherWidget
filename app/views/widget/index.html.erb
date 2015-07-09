@@ -1,0 +1,86 @@
+<h1>Widget#index</h1>
+<p>Find me in app/views/widget/index.html.erb</p>
+
+<h1>Weather</h1>
+<p>
+  <%= @weather %>
+</p>
+<p>
+  Location: <%= @weather["location"] %>
+</p>
+<p>
+  Temperature: <%= @weather["temp_f"] %> F / <%= @weather["temp_c"] %> C
+</p>
+<p>
+  Weather: <%= @weather["condition"] %>
+</p>
+
+<h1>Forecast</h1>
+
+<% @forecast.each do |forecast| %>
+  <p><%= forecast %></p>
+  <p>
+    Day: <%= forecast["date"]["weekday"] %>
+  </p>
+  <p>
+    High: <%= forecast["high"]["fahrenheit"] %> F/ <%= forecast["high"]["coffee-railsius"] %> C
+  </p>
+  <p>
+    Low: <%= forecast["low"]["fahrenheit"] %> F/ <%= forecast["low"]["celsius"] %> C
+  </p>
+  <p>
+    Conditions: <%= forecast["conditions"] %>
+  </p>
+<% end %>
+
+
+<div class="ui segment">
+  <h1 class="ui header">
+    <%= @weather["location"] %>
+  </h1>
+  <div class="ui small images" id="temp">
+    <%= image_tag "sunny.png" %>
+    <h3>
+      <%= @weather["temp_f"] %> F / <%= @weather["temp_c"] %> C
+    </h3>
+  </div>
+  <p></p>
+  <div class="ui dimmer">
+    <div class="content">
+      <div class="center">
+        <h2 class="ui inverted icon header">
+          <i class="heart icon"></i>
+          Dimmed Message!
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui special card">
+  <div class="image">
+    <%= image_tag "sunny.png" %>
+    <h1><%= @weather["location"]%></h1>
+    <p>
+      Temperature: <%= @weather["temp_f"] %> F / <%= @weather["temp_c"] %> C
+    </p>
+    <p>
+      Weather: <%= @weather["condition"] %>
+    </p>
+  </div>
+  <!-- <div class="content">
+    <a class="header">Kristy</a>
+    <div class="meta">
+      <span class="date">Joined in 2013</span>
+    </div>
+    <div class="description">
+      Kristy is an art director living in New York.
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      22 Friends
+    </a>
+  </div> -->
+</div>
