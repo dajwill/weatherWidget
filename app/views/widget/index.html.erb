@@ -15,6 +15,18 @@
   Weather: <%= @weather["condition"] %>
 </p>
 
+<div class="test" id="target">
+  <h1>Weather</h1>
+  <p>
+    Location: <%= @weather["location"] %>
+  </p>
+  <p>
+    Temperature: <%= @weather["temp_f"] %> F / <%= @weather["temp_c"] %> C
+  </p>
+  <p>
+    Weather: <%= @weather["condition"] %>
+  </p>
+</div>
 <h1>Forecast</h1>
 
 <% @forecast.each do |forecast| %>
