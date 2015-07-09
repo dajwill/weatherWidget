@@ -17,7 +17,17 @@ module WidgetHelper
   end
 
   def get_icon(weather)
-
+    if weather["condition"].include? "sun"
+      icon = "sunny.png"
+    elsif weather["condition"].include? "cloud"
+      icon = ""
+    elsif weather["condition"].include? "rain"
+      icon = ""
+    elsif weather["condition"].include? "storm"
+      icon = ""
+    elsif weather["condition"].include? "snow"
+      icon = ""
+    end
   end
 
 end
