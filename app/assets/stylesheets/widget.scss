@@ -6,12 +6,22 @@ img {
 }
 .ui-card {
   .image {
-    width: 75%;
+    width: 85%;
     margin: 0 auto;
   }
+}
+
+.center {
+  width: 75%;
+  margin: 0 auto;
 }
 
 #temp {
   width: 400px;
   display: inline;
+}
+
+#target {
+  margin: 10px;
+  width: 750px;
 }

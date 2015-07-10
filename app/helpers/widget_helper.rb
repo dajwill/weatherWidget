@@ -23,7 +23,7 @@ module WidgetHelper
       icon = "cloudy.png"
     elsif weather["conditions"].include? "Rain"
       icon = "rainy.png"
-    elsif weather["conditions"].include? "Storm"
+    elsif weather["conditions"].include? "storm"
       icon = "storm.png"
     elsif weather["conditions"].include? "Snow"
       icon = "snowy.png"

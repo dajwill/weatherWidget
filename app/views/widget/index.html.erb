@@ -1,16 +1,38 @@
-<div class="test" id="target">
-  <h1>Weather</h1>
-  <%= image_tag get_icon(@weather) %>
-  <p>
-    Location: <%= @weather["location"] %>
-  </p>
-  <p>
-    Temperature: <%= @weather["temp_f"] %> F / <%= @weather["temp_c"] %> C
-  </p>
-  <p>
-    Weather: <%= @weather["conditions"] %>
-  </p>
+<div class="ui segment" id="target">
+  <!-- <h1>Weather</h1> -->
+  <div class="ui two column grid">
+    <div class="column">
+      <div class="center">
+        <h1>
+          <%= @weather["location"] %>
+        </h1>
+        <%= image_tag get_icon(@weather) %>
+        <p>
+          <%= @weather["temp_f"] %> F / <%= @weather["temp_c"] %> C
+        </p>
+        <p>
+          <%= @weather["conditions"] %>
+        </p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="center">
+        <% @forecast.each do |forecast| %>
+          <div class="ui list">
+            <div class="item">
+              <%= image_tag get_icon(forecast), :class => "ui avatar image" %>
+              <div class="content">
+                <a class="header"><%= forecast["date"]["weekday"] %></a>
+                <div class="description"><%= forecast["conditions"] %>. <a><b> <%= forecast["high"]["fahrenheit"] %> F/ <%= forecast["low"]["celsius"] %> C</b></a></div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
 <h1>Forecast</h1>
 
 <% @forecast.each do |forecast| %>
