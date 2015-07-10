@@ -5,7 +5,7 @@ module WidgetHelper
       "location" => response["current_observation"]["display_location"]["full"],
       "temp_f" => response["current_observation"]["temp_f"],
       "temp_c" => response["current_observation"]["temp_c"],
-      "condition" => response["current_observation"]["weather"]
+      "conditions" => response["current_observation"]["weather"]
     }
     return weather
   end
@@ -17,17 +17,20 @@ module WidgetHelper
   end
 
   def get_icon(weather)
-    if weather["condition"].include? "sun"
+    if weather["conditions"].include? "Sun"
       icon = "sunny.png"
-    elsif weather["condition"].include? "cloud"
-      icon = ""
-    elsif weather["condition"].include? "rain"
-      icon = ""
-    elsif weather["condition"].include? "storm"
-      icon = ""
-    elsif weather["condition"].include? "snow"
-      icon = ""
+    elsif weather["conditions"].include? "Cloud"
+      icon = "cloudy.png"
+    elsif weather["conditions"].include? "Rain"
+      icon = "rainy.png"
+    elsif weather["conditions"].include? "Storm"
+      icon = "storm.png"
+    elsif weather["conditions"].include? "Snow"
+      icon = "snowy.png"
+    else
+      icon = "sunny.png"
     end
+    return icon
   end
 
 end
