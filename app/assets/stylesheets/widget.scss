@@ -11,10 +11,33 @@ img {
   }
 }
 
-.center {
-  width: 75%;
-  margin: 0 auto;
+.ui.grid {
+
+  #info {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .column {
+    #location {
+      margin-top: 10px;
+    }
+    #forecast {
+      margin-top: -10px;
+    }
+  }
 }
+
+.ui.list {
+  .item {
+    // margin: 15px 0;
+  }
+}
+
+// .center {
+//   width: 75%;
+//   margin: 0 auto;
+// }
 
 #temp {
   width: 400px;
@@ -23,5 +46,14 @@ img {
 
 #target {
   margin: 10px;
-  width: 750px;
+  width: 420px;
+  height: 260px;
+}
+
+#location {
+  width: 100%;
+}
+
+#forecast {
+  margin-top: 25px;
 }

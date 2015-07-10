@@ -1,67 +1,49 @@
 <div class="ui segment" id="target">
-  <!-- <h1>Weather</h1> -->
-  <div class="ui two column grid">
-    <div class="column">
-      <div class="center">
-        <h1>
-          <%= @weather["location"] %>
-        </h1>
+  <div class="ui grid">
+    <div class="sixteen wide center aligned column">
+      <h1 class="center aligned" id="location">
+        <%= @weather["location"] %>
+      </h1>
+    </div>
+  </div>
+  <div class="ui grid">
+    <div class="six wide center aligned column" id="info">
+      <div id="weather">
         <%= image_tag get_icon(@weather) %>
-        <p>
-          <%= @weather["temp_f"] %> F / <%= @weather["temp_c"] %> C
-        </p>
+        <h3>
+          <%= @weather["temp_f"] %> F
+        </h3>
         <p>
           <%= @weather["conditions"] %>
         </p>
       </div>
     </div>
-    <div class="column">
-      <div class="center">
-        <% @forecast.each do |forecast| %>
-          <div class="ui list">
+    <div class="ten wide center align column">
+      <div id="forecast">
+        <div class="ui list">
+          <% @forecast.each do |forecast| %>
             <div class="item">
               <%= image_tag get_icon(forecast), :class => "ui avatar image" %>
               <div class="content">
-                <a class="header"><%= forecast["date"]["weekday"] %></a>
-                <div class="description"><%= forecast["conditions"] %>. <a><b> <%= forecast["high"]["fahrenheit"] %> F/ <%= forecast["low"]["celsius"] %> C</b></a></div>
+                <p class="header"><%= forecast["date"]["weekday"] %></p>
+                <div class="description">
+                  <b>HI: </b><%= forecast["high"]["fahrenheit"] %> <b>LO: </b><%= forecast["low"]["fahrenheit"] %>
+                  <p>
+                    <%= forecast["conditions"] %>.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<h1>Forecast</h1>
-
-<% @forecast.each do |forecast| %>
-  <div class="ui list">
-    <div class="item">
-      <%= image_tag get_icon(forecast), :class => "ui avatar image" %>
-      <div class="content">
-        <a class="header"><%= forecast["date"]["weekday"] %></a>
-        <div class="description"><%= forecast["conditions"] %>. <a><b> <%= forecast["high"]["fahrenheit"] %> F/ <%= forecast["low"]["celsius"] %> C</b></a></div>
-      </div>
-    </div>
-  </div>
-  <p>
-    Day: <%= forecast["date"]["weekday"] %>
-  </p>
-  <p>
-    High: <%= forecast["high"]["fahrenheit"] %> F/ <%= forecast["high"]["coffee-railsius"] %> C
-  </p>
-  <p>
-    Low: <%= forecast["low"]["fahrenheit"] %> F/ <%= forecast["low"]["celsius"] %> C
-  </p>
-  <p>
-    Conditions: <%= forecast["conditions"] %>
-  </p>
-<% end %>
-
 <base target="_blank" />
-<iframe width="400" height="215" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-   src="https://daj-weather.herokuapp.com">
+<iframe width="440" height="280" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+   src="http://localhost:3000">
 </iframe><br />
 <small>
     <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es-419&amp;geocode=&amp;q=buenos+aires&amp;sll=37.0625,-95.677068&amp;sspn=38.638819,80.859375&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Buenos+Aires,+Argentina&amp;z=11&amp;ll=-34.603723,-58.381593"
