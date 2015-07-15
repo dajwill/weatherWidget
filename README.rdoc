@@ -8,4 +8,3 @@ Embed widget:
 
 
 View live here: daj-weather.herokuapp.com
-<tt>rake doc:app</tt>.
