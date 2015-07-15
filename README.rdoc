@@ -4,9 +4,7 @@ Simple weather widget for displayin forecast info for Chicago.
 
 Embed widget:
 
-<code>
   <iframe width="440" height="280" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://daj-weather.herokuapp.com"></iframe>
-</code>
 
 
 View live here: daj-weather.herokuapp.com
