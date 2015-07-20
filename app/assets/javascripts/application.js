@@ -14,8 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require semantic-ui
-//= require_tree .
-
-$('.special.card .image').dimmer({
-  on: 'hover'
-});
+//= require_tree ./lib
