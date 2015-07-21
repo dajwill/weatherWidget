@@ -1,8 +1,9 @@
 module WidgetHelper
   def get_weather
-    # response = HTTParty.get('http://api.wunderground.com/api/416ff8fce0c84725/conditions/q/IL/Chicago.json')
-    # bad request
-    response = HTTParty.get('http://api.wunderground.com/api/416ff8fce0c8472/conditions/q/IL/Chicago.json')
+    # Good request
+    response = HTTParty.get('http://api.wunderground.com/api/416ff8fce0c84725/conditions/q/IL/Chicago.json')
+    # # bad request
+    # response = HTTParty.get('http://api.wunderground.com/api/416ff8fce0c8472/conditions/q/IL/Chicago.json')
     if response["response"]["error"]
       {"error" => response["response"]["error"]}
     else
@@ -19,6 +20,10 @@ module WidgetHelper
     response = HTTParty.get('http://api.wunderground.com/api/416ff8fce0c84725/forecast/q/IL/Chicago.json')
     forecast = response['forecast']["simpleforecast"]['forecastday'][0..2]
     return forecast
+  end
+
+  def get_yahoo_weather
+    # create a secondary weather hash if wunderground request fails
   end
 
   def get_icon(weather)

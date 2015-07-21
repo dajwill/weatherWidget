@@ -1,13 +1,10 @@
 class WidgetController < ApplicationController
   include WidgetHelper
-  include TestHelper
-
-  # test = get_weather
 
   def index
     @weather = get_weather
     if @weather["error"]
-      redirect_to "http://www.rubyonrails.org" and return
+      redirect_to "/error" and return
     end
     @forecast = get_forecast
     @icon = get_icon(@weather)
@@ -16,9 +13,8 @@ class WidgetController < ApplicationController
   def yahoo
   end
 
-  # def api_check response
-  #   if response["response"]["error"]
-  #     redirect_to "http://www.rubyonrails.org"
-  #   end
-  # end
+  def error
+    @error = get_weather["error"]
+  end
+
 end
