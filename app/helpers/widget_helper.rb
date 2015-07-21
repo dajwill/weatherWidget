@@ -27,13 +27,17 @@ module WidgetHelper
   end
 
   def get_icon(weather)
-    {
-      "SUN" => "sunny.png",
-      "CLOUD" => "cloudy.png",
-      "RAIN" => "rainy.png",
-      "STORM" => "storm.png",
-      "SNOW" => "snowy.png"
-    }[weather["conditions"].upcase] || "sunny.png"
+    icon = "sunny.png"
+    condition = weather["conditions"].upcase
+    conditions_array = ["SUN", "CLOUD", "RAIN", "STORM", "SNOW"]
+    x = ["SUN", "CLOUD", "RAIN", "STORM", "SNOW"]
+    icons_array = ["sunny.png", "cloudy.png", "rainy.png", "storm.png", "snowy.png"]
+    x.each_with_index do |i, index|
+      if condition.include? i
+        icon = icons_array[index]
+      end
+    end
+    return icon
   end
 
 end
