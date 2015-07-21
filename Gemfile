@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'httparty'
-
+gem 'pry-rails', :group => :development
 # Use sqlite3 as the database for Active Record
 
 # Use SCSS for stylesheets

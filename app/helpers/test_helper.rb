@@ -1,5 +1,7 @@
 module TestHelper
-  def icon_test(icon)
-    return File.exist(icon)
+  def api_check response
+    if response["response"]["error"]
+      redirect_to "http://www.rubyonrails.org"
+    end
   end
 end
