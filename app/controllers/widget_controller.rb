@@ -2,7 +2,8 @@ class WidgetController < ApplicationController
   include WidgetHelper
 
   def index
-    @weather = get_weather
+    @ip = request.remote_ip
+    @weather = get_weather(@ip)
     if @weather["error"]
       redirect_to "/error" and return
     end
@@ -14,7 +15,8 @@ class WidgetController < ApplicationController
   end
 
   def error
-    @error = get_weather["error"]
+    @error = get_weather(request.remote_ip)["error"]
+    @ip = request.remote_ip
   end
 
 end

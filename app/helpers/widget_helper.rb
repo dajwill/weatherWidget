@@ -1,7 +1,14 @@
 module WidgetHelper
-  def get_weather
+  def get_weather(ip)
+    if ip == '127.0.0.1'
+      ip = '68.42.67.216'
+    end
+    request_location = JSON.parse(Geocoder.search(ip).to_json);
+    $state = request_location[0]['data']['region_code']
+    $city = request_location[0]['data']['city']
+    $city = $city.gsub(' ', '_')
     # Good request
-    response = HTTParty.get('http://api.wunderground.com/api/416ff8fce0c84725/conditions/q/IL/Chicago.json')
+    response = HTTParty.get("http://api.wunderground.com/api/416ff8fce0c84725/conditions/q/#$state/#$city.json")
     # # bad request
     # response = HTTParty.get('http://api.wunderground.com/api/416ff8fce0c8472/conditions/q/IL/Chicago.json')
     if response["response"]["error"]
@@ -17,7 +24,7 @@ module WidgetHelper
   end
 
   def get_forecast
-    response = HTTParty.get('http://api.wunderground.com/api/416ff8fce0c84725/forecast/q/IL/Chicago.json')
+    response = HTTParty.get("http://api.wunderground.com/api/416ff8fce0c84725/forecast/q/#$state/#$city.json")
     forecast = response['forecast']["simpleforecast"]['forecastday'][0..2]
     return forecast
   end
