@@ -1,3 +1,109 @@
-<div class="ui segment" id="target">
-  <!-- Yahoo api widget -->
+<div class="widget z-depth-3">
+  <div class="content">
+    <div class="row">
+      <div class="col s12" id="location">
+        <div class="col s6 left align">
+          <p>
+            Aug. 26, 2015
+          </p>
+        </div>
+        <div class="col s6 right-align">
+          <p class="city" id="item">Ann Arbor, MI</p>
+          <i class="material-icons" id="item">my_location</i>
+        </div>
+      </div>
+    </div>
+    <div class="valign-wrapper row">
+      <div class="valign col s10 offset-s1" id="now">
+        <div class="col s6 center-align">
+          <img src="images/moon.png" alt="" />
+        </div>
+        <div class="col s6 center-align" id="temp">
+          <h3>60&deg F</h3>
+          <p>
+            60&deg | 55&deg
+          </p>
+          <p>
+            Partly Cloudy
+          </p>
+        </div>
+      </div>
+      <div id="hourly" class="valign display col s12">
+        <div class="col s12 forecast-bar">
+          <div class="col s3">
+            <h5>12 PM</h5>
+            <img src="images/moon.png" alt="" />
+            <p>
+              60&deg | 55&deg
+            </p>
+          </div>
+          <div class="col s3">
+            <h5>12 PM</h5>
+            <img src="images/moon.png" alt="" />
+            <p>
+              60&deg | 55&deg
+            </p>
+          </div>
+          <div class="col s3">
+            <h5>12 PM</h5>
+            <img src="images/moon.png" alt="" />
+            <p>
+              60&deg | 55&deg
+            </p>
+          </div>
+          <div class="col s3">
+            <h5>12 PM</h5>
+            <img src="images/moon.png" alt="" />
+            <p>
+              60&deg | 55&deg
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="3-day" class="valign display col s10 offset-s1">
+        <table class="bordered">
+          <!-- <thead>
+            <tr>
+                <th data-field="id">Name</th>
+                <th data-field="name">Item Name</th>
+                <th data-field="price">Item Price</th>
+            </tr>
+          </thead> -->
+
+          <tbody>
+            <tr>
+              <td>Alvin</td>
+              <td>Eclair</td>
+              <td>$0.87</td>
+            </tr>
+            <tr>
+              <td>Alan</td>
+              <td>Jellybean</td>
+              <td>$3.76</td>
+            </tr>
+            <tr>
+              <td>Jonathan</td>
+              <td>Lollipop</td>
+              <td>$7.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="menu">
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s4"><a class="active" href="#now">Now</a></li>
+          <li class="tab col s4"><a href="#hourly">Hourly</a></li>
+          <li class="tab col s4"><a href="#3-day">3 Day</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
+
+<%= @conditions %>
+<%= @hourly %>
+<%= @forecast %>

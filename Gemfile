@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'semantic-ui-sass'
 gem 'httparty'
 gem 'pry-rails', :group => :development
 # Use sqlite3 as the database for Active Record

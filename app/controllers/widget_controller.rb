@@ -1,8 +1,9 @@
 class WidgetController < ApplicationController
-  include WidgetHelper
+  include WeatherNormalizationHelper
 
   def index
     @ip = request.remote_ip
+    @time = Time.new
     @weather = get_weather(@ip)
     if @weather["error"]
       redirect_to "/error" and return
@@ -12,6 +13,11 @@ class WidgetController < ApplicationController
   end
 
   def yahoo
+    ip = request.remote_ip
+    weather = Weather.new(ip)
+    @conditions = get_conditions(weather)
+    @forecast = get_forecast(weather)
+    @hourly = get_hourly(weather)
   end
 
   def error

@@ -4,11 +4,17 @@
 img {
   max-width: 64px;
 }
-.ui-card {
-  .image {
-    width: 85%;
-    margin: 0 auto;
+.ui.card {
+
+  .ui.image {
+    width: 400px;
+    height: 400px;
   }
+
+  // .image {
+  //   width: 85%;
+  //   margin: 0 auto;
+  // }
 }
 
 .ui.grid {
@@ -51,4 +57,66 @@ img {
 
 #forecast {
   margin-top: 25px;
+}
+
+#weather2 {
+  width: 100%;
+  text-align: center;
+}
+
+#icon {
+  width: 64px;
+}
+
+// Card Widget
+
+.widget {
+  width: 350px;
+  border-radius: 2px;
+}
+
+.widget .content {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#070301+1,070301+14,f76e61+100 */
+  background: rgba(20,15,14,1);
+background: -moz-linear-gradient(top, rgba(20,15,14,1) 0%, rgba(66,36,42,1) 44%, rgba(87,45,54,1) 55%, rgba(158,79,79,1) 77%, rgba(241,111,92,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(20,15,14,1)), color-stop(44%, rgba(66,36,42,1)), color-stop(55%, rgba(87,45,54,1)), color-stop(77%, rgba(158,79,79,1)), color-stop(100%, rgba(241,111,92,1)));
+background: -webkit-linear-gradient(top, rgba(20,15,14,1) 0%, rgba(66,36,42,1) 44%, rgba(87,45,54,1) 55%, rgba(158,79,79,1) 77%, rgba(241,111,92,1) 100%);
+background: -o-linear-gradient(top, rgba(20,15,14,1) 0%, rgba(66,36,42,1) 44%, rgba(87,45,54,1) 55%, rgba(158,79,79,1) 77%, rgba(241,111,92,1) 100%);
+background: -ms-linear-gradient(top, rgba(20,15,14,1) 0%, rgba(66,36,42,1) 44%, rgba(87,45,54,1) 55%, rgba(158,79,79,1) 77%, rgba(241,111,92,1) 100%);
+background: linear-gradient(to bottom, rgba(20,15,14,1) 0%, rgba(66,36,42,1) 44%, rgba(87,45,54,1) 55%, rgba(158,79,79,1) 77%, rgba(241,111,92,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#140f0e', endColorstr='#f16f5c', GradientType=0 );
+  border-radius: 2px 2px 0 0;
+  width: 350px;
+  height: 300px;
+  color: white;
+}
+
+.widget .menu {
+  width: 350px;
+  height: 50px;
+}
+
+#now {
+  width: 100%;
+}
+
+#location #item {
+  display: inline-block;
+  padding: 0 2.5px;
+}
+
+#location i {
+  font-size: 12.5px;
+}
+
+#now #temp {
+  margin-top: 5px;
+}
+
+#now #temp p, #now #temp h3 {
+  margin: 0;
+}
+
+.forecast-bar img{
+  width: 75%;
 }
